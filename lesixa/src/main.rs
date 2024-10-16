@@ -1,17 +1,10 @@
-fn main() {
+use std::fmt::Display;
 
+fn create_and_print<T>() where T: From<i32> + Display {
+    let a: T = 100.into(); // 创建了类型为 T 的变量 a，它的初始值由 100 转换而来
+    println!("a is: {}", a);
 }
-struct user {
-    username: String,
-    email: String,
-    active: bool,
-    sign_in_count: u32,
-}
-fn build_user() -> user {
-    user {
-        email,
-        username,
-        active: true,
-        sign_in_count: 0,
-    }
+
+fn main() {
+    create_and_print::<i32>();
 }
